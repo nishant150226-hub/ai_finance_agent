@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trends</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; padding: 0; }
+        nav { background: #4338ca; color: white; padding: 15px; }
+        nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 20px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+        nav ul li a:hover { text-decoration: underline; }
+        .container { padding: 20px; }
+        img { max-width: 100%; height: auto; }
+        p.error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('uploads') }}">Upload</a></li>
+            <li><a href="{{ url_for('results') }}">Results</a></li>
+            <li><a href="{{ url_for('trends') }}">Trends</a></li>
+            <li><a href="{{ url_for('suggestions') }}">Suggestions</a></li>
+            <li><a href="{{ url_for('awareness') }}">Awareness</a></li>
+            <li><a href="{{ url_for('chat_page') }}">Chat</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Expenditure Trends</h2>
+        {% if chart %}
+            <img src="data:image/png;base64,{{ chart }}" alt="Trend Chart">
+        {% else %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

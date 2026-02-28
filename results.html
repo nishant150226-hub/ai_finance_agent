@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Results</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f0f4f8; margin:0; padding:0; }
+nav { background:#4338ca; color:white; padding:15px; display:flex; gap:20px; }
+nav li { display:inline; list-style:none; cursor:pointer; font-weight:bold; }
+table { width:90%; margin:20px auto; border-collapse: collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+th, td { padding:10px; border-bottom:1px solid #ddd; text-align:left; }
+th { background:#4338ca; color:white; }
+</style>
+<script>
+function navigate(url){ window.location.href=url; }
+</script>
+</head>
+<body>
+<nav>
+<li onclick="navigate('/')">Home</li>
+<li onclick="navigate('/your_uploads')">Upload</li>
+<li onclick="navigate('/results')">Results</li>
+<li onclick="navigate('/trends')">Trends</li>
+<li onclick="navigate('/suggestions')">Suggestions</li>
+<li onclick="navigate('/awareness')">Awareness</li>
+</nav>
+
+<h1 style="text-align:center; color:#4338ca;">AI Extracted Financial Data</h1>
+
+<table>
+<tr><th>Tag</th><th>Amount</th><th>Date</th></tr>
+{% for item in data %}
+<tr>
+<td>{{ item.tag }}</td>
+<td>{{ item.amount }}</td>
+<td>{{ item.date }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

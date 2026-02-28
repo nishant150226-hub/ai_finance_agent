@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finance Dashboard</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f8; }
+nav { background:#4338ca; color:white; padding:15px; display:flex; gap:20px; }
+nav li { display:inline; list-style:none; cursor:pointer; font-weight:bold; }
+section { padding:50px; margin:20px auto; width:80%; background:white; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+h1 { color:#4338ca; }
+</style>
+<script>
+function navigate(url){
+    window.location.href=url;
+}
+</script>
+</head>
+<body>
+<nav>
+<li onclick="navigate('/')">Home</li>
+<li onclick="navigate('/your_uploads')">Upload</li>
+<li onclick="navigate('/results')">Results</li>
+<li onclick="navigate('/trends')">Trends</li>
+<li onclick="navigate('/suggestions')">Suggestions</li>
+<li onclick="navigate('/awareness')">Awareness</li>
+<li onclick="navigate('/chat')">Chat</li>
+</nav>
+
+
+<section>
+<h1>Welcome to Your Finance Dashboard</h1>
+<p>This dashboard helps you analyze your finances from uploaded PDFs. Use the navigation bar to access uploads, results, trends, suggestions, and awareness sections.</p>
+</section>
+
+</body>
+</html>

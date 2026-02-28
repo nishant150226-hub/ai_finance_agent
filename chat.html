@@ -1,0 +1,31 @@
+<div id="chatbox"></div>
+<input type="text" id="userInput" placeholder="Ask your AI assistant..." />
+<button onclick="sendMessage()">Send</button>
+
+<script>
+async function sendMessage(){
+    let input = document.getElementById("userInput");
+    let message = input.value.trim();
+    if(!message) return;
+
+    appendMessage("You", message, "user");
+    input.value = "";
+
+    let response = await fetch("/chat", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({message: message})
+    });
+    let data = await response.json();
+    appendMessage("AI", data.reply, "ai");
+}
+
+function appendMessage(sender, text, cls){
+    let chatbox = document.getElementById("chatbox");
+    let div = document.createElement("div");
+    div.className = "message";
+    div.innerHTML = `<span class="${cls}">${sender}:</span> ${text}`;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+</script>
