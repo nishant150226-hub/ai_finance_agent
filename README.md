@@ -35,7 +35,7 @@ This project allows users to upload financial documents and interact with an AI-
 
 1. Users upload financial files (expenses, transactions, etc.)
 2. AI extracts structured financial data
-3. System analyzes spending patterns
+3. System analyses spending patterns
 4. Generates:
 
    * Expense trends
@@ -81,7 +81,7 @@ Built as an AI-powered personal finance assistant to demonstrate:
 
 * AI integration in real-world applications
 * Intelligent data analysis
-* Financial decision support systems
+* Financial decision support system
 
 ---
 
